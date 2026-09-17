@@ -1,0 +1,105 @@
+.agri-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xs);
+  width: 100%;
+}
+
+.agri-input__label {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-main);
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.agri-input__required {
+  color: var(--color-danger);
+}
+
+.agri-input__wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.agri-input__field {
+  width: 100%;
+  min-height: var(--min-touch-target);
+  padding: var(--space-sm) var(--space-md);
+  font-size: var(--font-size-md);
+  color: var(--color-text-main);
+  background-color: var(--color-bg-surface);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  appearance: none;
+}
+
+.agri-input__field.has-leading {
+  padding-left: 2.75rem;
+}
+
+.agri-input__field.has-trailing {
+  padding-right: 2.75rem;
+}
+
+.agri-input__field::placeholder {
+  color: var(--color-text-muted);
+  opacity: 0.8;
+}
+
+.agri-input__field:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-primary-alpha);
+}
+
+/* Error State */
+.agri-input-group--error .agri-input__field {
+  border-color: var(--color-danger);
+}
+
+.agri-input-group--error .agri-input__field:focus {
+  box-shadow: 0 0 0 3px rgba(153, 27, 27, 0.15);
+}
+
+/* Disabled State */
+.agri-input-group--disabled .agri-input__field {
+  background-color: var(--color-bg-subtle);
+  color: var(--color-text-muted);
+  cursor: not-allowed;
+  border-color: var(--color-border-light);
+}
+
+.agri-input__icon {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+  pointer-events: none;
+}
+
+.agri-input__icon--leading {
+  left: 0.85rem;
+}
+
+.agri-input__icon--trailing {
+  right: 0.85rem;
+}
+
+.agri-input__error {
+  font-size: var(--font-size-xs);
+  color: var(--color-danger);
+  font-weight: var(--font-weight-medium);
+  margin-top: 0.1rem;
+}
+
+.agri-input__helper {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  margin-top: 0.1rem;
+}

@@ -1,0 +1,70 @@
+.agri-section-header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-lg);
+}
+
+@media (min-width: 640px) {
+  .agri-section-header {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+}
+
+.agri-section-header__main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xs);
+}
+
+.agri-section-header__badge-wrapper {
+  margin-bottom: var(--space-2xs);
+}
+
+.agri-section-header__title {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-main);
+  line-height: var(--line-height-tight);
+}
+
+@media (min-width: 768px) {
+  .agri-section-header__title {
+    font-size: var(--font-size-2xl);
+  }
+}
+
+.agri-section-header__subtitle {
+  font-size: var(--font-size-md);
+  color: var(--color-text-muted);
+}
+
+.agri-section-header__action-wrapper {
+  margin-top: var(--space-xs);
+}
+
+.agri-section-header__action {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-primary);
+  transition: gap 0.15s ease, color 0.15s ease;
+  min-height: 44px; /* Touch target accessibility */
+}
+
+.agri-section-header__action:hover {
+  gap: 0.6rem;
+  color: var(--color-primary-hover);
+}
+
+.agri-section-header__arrow {
+  transition: transform 0.15s ease;
+}
+
+.agri-section-header__action:hover .agri-section-header__arrow {
+  transform: translateX(3px);
+}

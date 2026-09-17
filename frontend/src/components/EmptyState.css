@@ -1,0 +1,43 @@
+.agri-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--space-2xl) var(--space-md);
+  background-color: var(--color-bg-surface);
+  border: 1.5px dashed var(--color-border);
+  border-radius: var(--radius-xl);
+  width: 100%;
+}
+
+.agri-empty-state__icon-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-bg-subtle);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-md);
+}
+
+.agri-empty-state__title {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-main);
+  margin-bottom: var(--space-xs);
+}
+
+.agri-empty-state__desc {
+  font-size: var(--font-size-md);
+  color: var(--color-text-muted);
+  max-width: 460px;
+  line-height: var(--line-height-normal);
+  margin-bottom: var(--space-lg);
+}
+
+.agri-empty-state__btn {
+  margin-top: var(--space-xs);
+}

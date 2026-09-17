@@ -1,0 +1,100 @@
+.agri-category-card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-bg-surface);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.15s ease-in-out;
+  cursor: pointer;
+  height: 100%;
+}
+
+.agri-category-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-md);
+  background-color: #fafdfb;
+}
+
+.agri-category-card:focus-visible {
+  outline: 3px solid var(--color-border-focus);
+  outline-offset: 2px;
+}
+
+.agri-category-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-sm);
+}
+
+.agri-category-card__icon-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-md);
+  background-color: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+.agri-category-card__count {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-secondary);
+  background-color: var(--color-bg-subtle);
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-full);
+}
+
+.agri-category-card__content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xs);
+  margin-bottom: var(--space-md);
+}
+
+.agri-category-card__title {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-main);
+  line-height: var(--line-height-tight);
+}
+
+.agri-category-card__desc {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  line-height: var(--line-height-normal);
+}
+
+.agri-category-card__footer {
+  margin-top: auto;
+  padding-top: var(--space-xs);
+}
+
+.agri-category-card__action {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-primary);
+  transition: gap 0.15s ease;
+}
+
+.agri-category-card:hover .agri-category-card__action {
+  gap: 0.6rem;
+  color: var(--color-primary-hover);
+}
+
+.agri-category-card__arrow {
+  transition: transform 0.15s ease;
+}
+
+.agri-category-card:hover .agri-category-card__arrow {
+  transform: translateX(3px);
+}

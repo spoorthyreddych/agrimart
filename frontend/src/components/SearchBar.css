@@ -1,0 +1,110 @@
+.agri-searchbar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  background-color: var(--color-bg-surface);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xs);
+  box-shadow: var(--shadow-md);
+  width: 100%;
+}
+
+.agri-searchbar__field-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  flex: 1;
+}
+
+.agri-searchbar__input-wrapper,
+.agri-searchbar__filter-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: var(--color-bg-app);
+  border-radius: var(--radius-md);
+}
+
+.agri-searchbar__icon {
+  position: absolute;
+  left: 0.85rem;
+  color: var(--color-primary);
+  pointer-events: none;
+}
+
+.agri-searchbar__input {
+  width: 100%;
+  min-height: 46px;
+  padding: 0.6rem 2.5rem 0.6rem 2.6rem;
+  font-size: var(--font-size-md);
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--color-text-main);
+  border-radius: var(--radius-md);
+}
+
+.agri-searchbar__input:focus {
+  outline: none;
+  background-color: var(--color-bg-surface);
+  border-color: var(--color-primary);
+}
+
+.agri-searchbar__select {
+  width: 100%;
+  min-height: 46px;
+  padding: 0.6rem 1rem 0.6rem 2.6rem;
+  font-size: var(--font-size-sm);
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--color-text-main);
+  border-radius: var(--radius-md);
+  appearance: none;
+  cursor: pointer;
+}
+
+.agri-searchbar__clear {
+  position: absolute;
+  right: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+  padding: 0.25rem;
+  border-radius: var(--radius-full);
+}
+
+.agri-searchbar__clear:hover {
+  background-color: var(--color-bg-subtle);
+  color: var(--color-text-main);
+}
+
+.agri-searchbar__submit {
+  width: 100%;
+}
+
+/* Tablet & Desktop Layout Adjustment */
+@media (min-width: 768px) {
+  .agri-searchbar {
+    flex-direction: row;
+    align-items: center;
+    padding: var(--space-xs) var(--space-sm);
+  }
+
+  .agri-searchbar__field-group {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .agri-searchbar__filter-wrapper {
+    max-width: 220px;
+    border-left: 1px solid var(--color-border);
+    border-radius: 0;
+  }
+
+  .agri-searchbar__submit {
+    width: auto;
+    white-space: nowrap;
+  }
+}

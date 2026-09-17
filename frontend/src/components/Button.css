@@ -1,0 +1,115 @@
+.agri-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-semibold);
+  border-radius: var(--radius-md);
+  border: 2px solid transparent;
+  transition: all 0.15s ease-in-out;
+  user-select: none;
+  text-decoration: none;
+  line-height: 1;
+  text-align: center;
+  min-height: var(--min-touch-target); /* Ensure 48px touch target for mobile ease of use */
+}
+
+/* Button Sizes */
+.agri-btn--sm {
+  font-size: var(--font-size-sm);
+  padding: 0.4rem 0.85rem;
+  min-height: 38px;
+}
+
+.agri-btn--md {
+  font-size: var(--font-size-md);
+  padding: 0.65rem 1.25rem;
+  min-height: 48px;
+}
+
+.agri-btn--lg {
+  font-size: var(--font-size-lg);
+  padding: 0.85rem 1.75rem;
+  min-height: 54px;
+}
+
+/* Button Variants */
+.agri-btn--primary {
+  background-color: var(--color-primary);
+  color: var(--color-text-inverse);
+  border-color: var(--color-primary);
+}
+
+.agri-btn--primary:hover:not(:disabled) {
+  background-color: var(--color-primary-hover);
+  border-color: var(--color-primary-hover);
+  box-shadow: var(--shadow-sm);
+}
+
+.agri-btn--secondary {
+  background-color: var(--color-secondary);
+  color: var(--color-text-inverse);
+  border-color: var(--color-secondary);
+}
+
+.agri-btn--secondary:hover:not(:disabled) {
+  background-color: var(--color-secondary-hover);
+  border-color: var(--color-secondary-hover);
+  box-shadow: var(--shadow-sm);
+}
+
+.agri-btn--outline {
+  background-color: transparent;
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.agri-btn--outline:hover:not(:disabled) {
+  background-color: var(--color-primary-light);
+  color: var(--color-primary-hover);
+}
+
+.agri-btn--danger {
+  background-color: var(--color-danger);
+  color: var(--color-text-inverse);
+  border-color: var(--color-danger);
+}
+
+.agri-btn--danger:hover:not(:disabled) {
+  background-color: #7f1d1d;
+  border-color: #7f1d1d;
+}
+
+.agri-btn--ghost {
+  background-color: transparent;
+  color: var(--color-text-main);
+  border-color: transparent;
+}
+
+.agri-btn--ghost:hover:not(:disabled) {
+  background-color: var(--color-bg-subtle);
+  color: var(--color-primary);
+}
+
+/* Full width modifier */
+.agri-btn--full {
+  width: 100%;
+}
+
+/* Disabled state */
+.agri-btn--disabled,
+.agri-btn:disabled {
+  background-color: var(--color-bg-muted) !important;
+  color: var(--color-text-muted) !important;
+  border-color: var(--color-border) !important;
+  cursor: not-allowed;
+  opacity: 0.7;
+  box-shadow: none !important;
+}
+
+.agri-btn__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}

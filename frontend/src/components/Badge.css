@@ -1,0 +1,58 @@
+.agri-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2xs);
+  font-weight: var(--font-weight-semibold);
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+  line-height: 1;
+  text-transform: capitalize;
+}
+
+/* Sizes */
+.agri-badge--sm {
+  font-size: var(--font-size-xs);
+  padding: 0.2rem 0.5rem;
+}
+
+.agri-badge--md {
+  font-size: var(--font-size-sm);
+  padding: 0.3rem 0.75rem;
+}
+
+/* Color Variants */
+.agri-badge--success {
+  background-color: var(--color-success-bg);
+  color: var(--color-success);
+  border: 1px solid rgba(22, 101, 52, 0.2);
+}
+
+.agri-badge--warning {
+  background-color: var(--color-warning-bg);
+  color: var(--color-warning);
+  border: 1px solid rgba(154, 52, 18, 0.2);
+}
+
+.agri-badge--danger {
+  background-color: var(--color-danger-bg);
+  color: var(--color-danger);
+  border: 1px solid rgba(153, 27, 27, 0.2);
+}
+
+.agri-badge--info {
+  background-color: var(--color-info-bg);
+  color: var(--color-info);
+  border: 1px solid rgba(30, 64, 175, 0.2);
+}
+
+.agri-badge--neutral {
+  background-color: var(--color-bg-subtle);
+  color: var(--color-text-secondary);
+  border: 1px solid var(--color-border);
+}
+
+.agri-badge__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}

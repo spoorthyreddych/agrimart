@@ -1,0 +1,79 @@
+.agri-select-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xs);
+  width: 100%;
+}
+
+.agri-select__label {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-main);
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.agri-select__required {
+  color: var(--color-danger);
+}
+
+.agri-select__wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.agri-select__field {
+  width: 100%;
+  min-height: var(--min-touch-target);
+  padding: var(--space-sm) 2.5rem var(--space-sm) var(--space-md);
+  font-size: var(--font-size-md);
+  color: var(--color-text-main);
+  background-color: var(--color-bg-surface);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  appearance: none;
+  cursor: pointer;
+}
+
+.agri-select__field:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-primary-alpha);
+}
+
+.agri-select__chevron {
+  position: absolute;
+  right: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+  pointer-events: none;
+}
+
+/* Error State */
+.agri-select-group--error .agri-select__field {
+  border-color: var(--color-danger);
+}
+
+/* Disabled State */
+.agri-select-group--disabled .agri-select__field {
+  background-color: var(--color-bg-subtle);
+  color: var(--color-text-muted);
+  cursor: not-allowed;
+}
+
+.agri-select__error {
+  font-size: var(--font-size-xs);
+  color: var(--color-danger);
+  font-weight: var(--font-weight-medium);
+}
+
+.agri-select__helper {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+}
