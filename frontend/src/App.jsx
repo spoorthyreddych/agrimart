@@ -1,24 +1,25 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
 import ComponentShowcase from './pages/ComponentShowcase';
 import './styles/global.css';
 
 /**
- * Root Application Router Configuration for AgriMart (Phase 2).
+ * Root Application Router Configuration for AgriMart (Phase 3).
  */
 export function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<ComponentShowcase />} />
-        <Route path="/rentals" element={<ComponentShowcase />} />
-        <Route path="/marketplace" element={<ComponentShowcase />} />
-        <Route path="/crops" element={<ComponentShowcase />} />
-        <Route path="/products" element={<ComponentShowcase />} />
-        <Route path="/login" element={<ComponentShowcase />} />
-        <Route path="/post-listing" element={<ComponentShowcase />} />
-        <Route path="/dashboard" element={<ComponentShowcase />} />
-        <Route path="*" element={<ComponentShowcase />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/rent" element={<Home />} />
+        <Route path="/buy-sell" element={<Home />} />
+        <Route path="/crops" element={<Home />} />
+        <Route path="/products" element={<Home />} />
+        <Route path="/login" element={<Home />} />
+        <Route path="/post-listing" element={<Home />} />
+        <Route path="/showcase" element={<ComponentShowcase />} />
+        <Route path="*" element={<Home />} />
       </Routes>
     </BrowserRouter>
   );

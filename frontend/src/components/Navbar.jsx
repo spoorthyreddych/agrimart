@@ -21,8 +21,8 @@ export const Navbar = ({ isLoggedIn = false, user }) => {
 
   const navItems = [
     { label: 'Home', path: '/' },
-    { label: 'Rent Equipment', path: '/rentals' },
-    { label: 'Buy & Sell', path: '/marketplace' },
+    { label: 'Rent Equipment', path: '/rent' },
+    { label: 'Buy & Sell', path: '/buy-sell' },
     { label: 'Crops', path: '/crops' },
   ];
 
