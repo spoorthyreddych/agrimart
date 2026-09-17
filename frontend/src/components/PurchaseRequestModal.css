@@ -1,0 +1,201 @@
+.purchase-modal__form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.purchase-modal__summary {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  background-color: var(--color-bg-app);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-sm);
+}
+
+.purchase-modal__thumb {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  flex-shrink: 0;
+}
+
+.purchase-modal__info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.purchase-modal__title {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-main);
+  line-height: var(--line-height-tight);
+}
+
+.purchase-modal__location {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+}
+
+.purchase-modal__price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.25rem;
+  margin-top: 0.15rem;
+}
+
+.purchase-modal__price {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+}
+
+.purchase-modal__unit,
+.purchase-modal__qty {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+}
+
+.purchase-modal__fields {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.purchase-modal__contact-box {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.seller-contact-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  background-color: var(--color-primary-light);
+  border: 1.5px solid rgba(27, 67, 50, 0.2);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md);
+}
+
+.seller-contact-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-primary);
+  color: #ffffff;
+}
+
+.seller-contact-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.seller-contact-role {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+}
+
+.seller-contact-phone {
+  font-size: var(--font-size-lg);
+  color: var(--color-primary);
+}
+
+.seller-contact-note {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+}
+
+.purchase-modal__textarea {
+  width: 100%;
+  padding: var(--space-sm) var(--space-md);
+  font-size: var(--font-size-md);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background-color: var(--color-bg-surface);
+  color: var(--color-text-main);
+  resize: vertical;
+}
+
+.purchase-modal__textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-primary-alpha);
+}
+
+.purchase-modal__notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  background-color: #fffbe6;
+  border: 1px solid #ffe58f;
+  border-radius: var(--radius-md);
+  padding: var(--space-sm);
+  font-size: var(--font-size-xs);
+  color: #8c6b00;
+  line-height: var(--line-height-normal);
+}
+
+.purchase-modal__notice .notice-icon {
+  color: var(--color-accent);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.purchase-modal__actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--space-xs);
+}
+
+/* Success Confirmation State */
+.purchase-modal__success-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-md);
+  padding: var(--space-sm) 0;
+}
+
+.purchase-modal__success-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-success-bg);
+  color: var(--color-success);
+}
+
+.purchase-modal__success-title {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+}
+
+.purchase-modal__success-desc {
+  font-size: var(--font-size-md);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-relaxed);
+}
+
+.purchase-modal__success-details {
+  width: 100%;
+  background-color: var(--color-bg-app);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  text-align: left;
+}
