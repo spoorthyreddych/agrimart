@@ -7,12 +7,14 @@ import BuySellMarketplace from './pages/BuySellMarketplace';
 import ProductDetail from './pages/ProductDetail';
 import CropsMarketplace from './pages/CropsMarketplace';
 import CropDetail from './pages/CropDetail';
+import AgriProductsMarketplace from './pages/AgriProductsMarketplace';
+import AgriProductDetail from './pages/AgriProductDetail';
 import CreateListingPreview from './pages/CreateListingPreview';
 import ComponentShowcase from './pages/ComponentShowcase';
 import './styles/global.css';
 
 /**
- * Root Application Router Configuration for AgriMart (Phase 6).
+ * Root Application Router Configuration for AgriMart (Phase 7).
  */
 export function App() {
   return (
@@ -25,11 +27,12 @@ export function App() {
         <Route path="/product/:id" element={<ProductDetail />} />
         <Route path="/crops" element={<CropsMarketplace />} />
         <Route path="/crops/:id" element={<CropDetail />} />
+        <Route path="/products" element={<AgriProductsMarketplace />} />
+        <Route path="/products/:id" element={<AgriProductDetail />} />
         <Route path="/create-listing" element={<CreateListingPreview />} />
-        <Route path="/products" element={<BuySellMarketplace />} />
         <Route path="/login" element={<Home />} />
         <Route path="/showcase" element={<ComponentShowcase />} />
-        <Route path="*" element={<CropsMarketplace />} />
+        <Route path="*" element={<AgriProductsMarketplace />} />
       </Routes>
     </BrowserRouter>
   );
