@@ -96,11 +96,22 @@ export const RentListings = () => {
       <div className="rent-page">
         {/* Page Header */}
         <div className="rent-header">
-          <Badge variant="info">Equipment Rental Marketplace</Badge>
-          <h1 className="rent-header__title">Rent Agricultural Equipment</h1>
-          <p className="rent-header__subtext">
-            Find tractors, rotavators, harvesters and other farming equipment available near you.
-          </p>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '16px' }}>
+            <div>
+              <Badge variant="info">Equipment Rental Marketplace</Badge>
+              <h1 className="rent-header__title">Rent Agricultural Equipment</h1>
+              <p className="rent-header__subtext">
+                Find tractors, rotavators, harvesters and other farming equipment available near you.
+              </p>
+            </div>
+            <Button
+              variant="primary"
+              size="md"
+              onClick={() => navigate('/create-listing')}
+            >
+              + Rent Out Equipment
+            </Button>
+          </div>
         </div>
 
         {/* Global Search Bar */}

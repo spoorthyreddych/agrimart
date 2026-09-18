@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { NavLink, Link, useNavigate } from 'react-router-dom';
-import { Sprout, Search, Menu, X, User, LayoutDashboard, PlusCircle } from 'lucide-react';
+import { Sprout, Search, Menu, X, User, LayoutDashboard, PlusCircle, LogOut } from 'lucide-react';
 import Button from './Button';
+import { useAuth } from '../context/AuthContext';
 import './Navbar.css';
 
 /**
@@ -11,10 +12,26 @@ import './Navbar.css';
  * @param {boolean} [props.isLoggedIn=false] - Mock user authentication state
  * @param {Object} [props.user] - Mock user profile
  */
-export const Navbar = ({ isLoggedIn = false, user }) => {
+export const Navbar = ({ isLoggedIn: propIsLoggedIn, user: propUser }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [searchOpen, setSearchOpen] = useState(false);
   const navigate = useNavigate();
+
+  // Try using AuthContext if available
+  let authContextUser = null;
+  let authContextIsAuth = false;
+  let logoutDemo = null;
+
+  try {
+    const auth = useAuth();
+    authContextUser = auth.user;
+    authContextIsAuth = auth.isAuthenticated;
+    logoutDemo = auth.logoutDemo;
+  } catch (e) {
+    // AuthContext optional fallback
+  }
+
+  const effectiveIsLoggedIn = propIsLoggedIn || authContextIsAuth;
+  const effectiveUser = authContextUser || propUser;
 
   const toggleMobileMenu = () => setMobileMenuOpen((prev) => !prev);
   const closeMobileMenu = () => setMobileMenuOpen(false);
@@ -24,6 +41,7 @@ export const Navbar = ({ isLoggedIn = false, user }) => {
     { label: 'Rent Equipment', path: '/rent' },
     { label: 'Buy & Sell', path: '/buy-sell' },
     { label: 'Crops', path: '/crops' },
+    { label: 'Used Equipment', path: '/used-equipment' },
   ];
 
   return (
@@ -78,25 +96,33 @@ export const Navbar = ({ isLoggedIn = false, user }) => {
             variant="ghost"
             size="sm"
             icon={<Search size={18} />}
-            onClick={() => navigate('/rentals')}
+            onClick={() => navigate('/rent')}
             aria-label="Open search"
           >
             Search
           </Button>
 
-          {isLoggedIn ? (
+          {effectiveIsLoggedIn ? (
             <div className="agri-navbar__user-actions">
               <Button
                 variant="outline"
                 size="sm"
-                icon={<LayoutDashboard size={18} />}
-                onClick={() => navigate('/dashboard')}
+                icon={<User size={16} />}
+                onClick={() => navigate('/create-listing')}
               >
-                Dashboard
+                {effectiveUser?.name || 'Farmer Account'}
               </Button>
-              <div className="agri-navbar__avatar" title={user?.name || 'Farmer Account'}>
-                <User size={20} />
-              </div>
+              {logoutDemo && (
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  icon={<LogOut size={16} />}
+                  onClick={logoutDemo}
+                  title="Sign Out (Demo)"
+                >
+                  Logout
+                </Button>
+              )}
             </div>
           ) : (
             <div className="agri-navbar__auth-btns">
@@ -110,10 +136,9 @@ export const Navbar = ({ isLoggedIn = false, user }) => {
               <Button
                 variant="primary"
                 size="sm"
-                icon={<PlusCircle size={16} />}
-                onClick={() => navigate('/post-listing')}
+                onClick={() => navigate('/register')}
               >
-                Post Listing
+                Register
               </Button>
             </div>
           )}
@@ -152,35 +177,39 @@ export const Navbar = ({ isLoggedIn = false, user }) => {
             </ul>
 
             <div className="agri-navbar__mobile-actions">
-              {isLoggedIn ? (
-                <Button
-                  variant="primary"
-                  size="md"
-                  fullWidth
-                  icon={<LayoutDashboard size={18} />}
-                  onClick={() => {
-                    closeMobileMenu();
-                    navigate('/dashboard');
-                  }}
-                >
-                  My Dashboard
-                </Button>
-              ) : (
-                <>
+              {effectiveIsLoggedIn ? (
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', width: '100%' }}>
                   <Button
                     variant="primary"
                     size="md"
                     fullWidth
-                    icon={<PlusCircle size={18} />}
+                    icon={<User size={18} />}
                     onClick={() => {
                       closeMobileMenu();
-                      navigate('/post-listing');
+                      navigate('/create-listing');
                     }}
                   >
-                    + Post Free Listing
+                    {effectiveUser?.name || 'My Account'}
                   </Button>
+                  {logoutDemo && (
+                    <Button
+                      variant="outline"
+                      size="md"
+                      fullWidth
+                      icon={<LogOut size={18} />}
+                      onClick={() => {
+                        logoutDemo();
+                        closeMobileMenu();
+                      }}
+                    >
+                      Log Out
+                    </Button>
+                  )}
+                </div>
+              ) : (
+                <>
                   <Button
-                    variant="outline"
+                    variant="primary"
                     size="md"
                     fullWidth
                     onClick={() => {
@@ -188,7 +217,18 @@ export const Navbar = ({ isLoggedIn = false, user }) => {
                       navigate('/login');
                     }}
                   >
-                    Sign In / Register
+                    Log In
+                  </Button>
+                  <Button
+                    variant="outline"
+                    size="md"
+                    fullWidth
+                    onClick={() => {
+                      closeMobileMenu();
+                      navigate('/register');
+                    }}
+                  >
+                    Create Account
                   </Button>
                 </>
               )}

@@ -1,0 +1,279 @@
+/* AgriMart Authentication Styles - Login, Register, Forgot Password */
+
+.agri-auth-page {
+  min-height: calc(100vh - 140px);
+  background-color: var(--color-bg-subtle, #f1f5f9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-6, 24px) var(--spacing-4, 16px);
+}
+
+.agri-auth-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 100%;
+  max-width: 1040px;
+  background-color: var(--color-bg-surface, #ffffff);
+  border-radius: var(--border-radius-xl, 16px);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+  border: 1px solid var(--color-border-light, #e2e8f0);
+  overflow: hidden;
+}
+
+@media (min-width: 900px) {
+  .agri-auth-container {
+    grid-template-columns: 1.15fr 0.85fr;
+  }
+}
+
+/* Card Section */
+.agri-auth-card {
+  padding: var(--spacing-8, 32px) var(--spacing-6, 24px);
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 640px) {
+  .agri-auth-card {
+    padding: var(--spacing-10, 40px);
+  }
+}
+
+.agri-auth-header {
+  margin-bottom: var(--spacing-6, 24px);
+}
+
+.agri-auth-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-2, 8px);
+  padding: 6px var(--spacing-3, 12px);
+  background-color: var(--color-primary-light, #e8f5e9);
+  color: var(--color-primary, #1b4332);
+  border-radius: var(--border-radius-full, 9999px);
+  font-size: var(--font-size-xs, 0.8125rem);
+  font-weight: var(--font-weight-medium, 500);
+  margin-bottom: var(--spacing-3, 12px);
+}
+
+.agri-auth-title {
+  font-size: var(--font-size-2xl, 1.875rem);
+  font-weight: var(--font-weight-bold, 700);
+  color: var(--color-text-main, #0f172a);
+  margin-bottom: var(--spacing-1, 4px);
+  line-height: 1.25;
+}
+
+.agri-auth-subtitle {
+  font-size: var(--font-size-sm, 0.9375rem);
+  color: var(--color-text-muted, #64748b);
+  line-height: 1.5;
+}
+
+/* Demo Notice Banners */
+.agri-auth-notice {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-3, 12px);
+  padding: var(--spacing-4, 16px);
+  border-radius: var(--border-radius-lg, 10px);
+  margin-bottom: var(--spacing-6, 24px);
+  font-size: var(--font-size-sm, 0.9375rem);
+  line-height: 1.4;
+}
+
+.agri-auth-notice--success {
+  background-color: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  color: #166534;
+}
+
+.agri-auth-notice--success .agri-auth-notice__icon {
+  color: #16a34a;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.agri-auth-notice--error {
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #991b1b;
+}
+
+.agri-auth-notice--error .agri-auth-notice__icon {
+  color: #dc2626;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.agri-auth-notice__title {
+  display: block;
+  font-weight: var(--font-weight-semibold, 600);
+  margin-bottom: 2px;
+}
+
+.agri-auth-notice__text {
+  margin: 0;
+}
+
+/* Form Layout */
+.agri-auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-5, 20px);
+}
+
+.agri-password-field {
+  position: relative;
+}
+
+.agri-password-toggle-btn {
+  background: transparent;
+  border: none;
+  color: var(--color-text-muted, #64748b);
+  padding: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: color 0.15s ease;
+}
+
+.agri-password-toggle-btn:hover {
+  color: var(--color-primary, #1b4332);
+}
+
+/* Checkbox & Links */
+.agri-auth-options-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-3, 12px);
+  margin-top: -4px;
+  flex-wrap: wrap;
+}
+
+.agri-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2, 8px);
+  font-size: var(--font-size-sm, 0.9375rem);
+  color: var(--color-text-secondary, #334155);
+  cursor: pointer;
+  user-select: none;
+}
+
+.agri-checkbox {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--color-primary, #1b4332);
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.agri-auth-forgot-link {
+  font-size: var(--font-size-sm, 0.9375rem);
+  font-weight: var(--font-weight-medium, 500);
+  color: var(--color-primary, #1b4332);
+  text-decoration: none;
+}
+
+.agri-auth-forgot-link:hover {
+  text-decoration: underline;
+}
+
+/* Footer Section */
+.agri-auth-footer {
+  margin-top: var(--spacing-6, 24px);
+  padding-top: var(--spacing-5, 20px);
+  border-top: 1px solid var(--color-border-light, #e2e8f0);
+  text-align: center;
+  font-size: var(--font-size-sm, 0.9375rem);
+  color: var(--color-text-muted, #64748b);
+}
+
+.agri-auth-switch-link {
+  font-weight: var(--font-weight-semibold, 600);
+  color: var(--color-primary, #1b4332);
+  text-decoration: none;
+}
+
+.agri-auth-switch-link:hover {
+  text-decoration: underline;
+}
+
+/* Side Visual Panel (Desktop only) */
+.agri-auth-visual-panel {
+  display: none;
+  background: linear-gradient(135deg, #1b4332 0%, #2d6a4f 100%);
+  color: #ffffff;
+  padding: var(--spacing-10, 40px);
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 900px) {
+  .agri-auth-visual-panel {
+    display: flex;
+  }
+}
+
+.agri-auth-visual-content {
+  max-width: 380px;
+}
+
+.agri-auth-visual-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 9999px;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  margin-bottom: var(--spacing-4, 16px);
+  backdrop-filter: blur(4px);
+}
+
+.agri-auth-visual-content h2 {
+  font-size: var(--font-size-xl, 1.5rem);
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: var(--spacing-3, 12px);
+  line-height: 1.3;
+}
+
+.agri-auth-visual-content p {
+  font-size: var(--font-size-sm, 0.9375rem);
+  color: #d1fae5;
+  line-height: 1.6;
+  margin-bottom: var(--spacing-6, 24px);
+}
+
+.agri-auth-visual-features {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3, 12px);
+}
+
+.agri-auth-visual-feature-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: var(--font-size-sm, 0.9375rem);
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.agri-feature-dot {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.2);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+}

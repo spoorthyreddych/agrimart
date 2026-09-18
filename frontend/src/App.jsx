@@ -12,33 +12,41 @@ import AgriProductDetail from './pages/AgriProductDetail';
 import UsedEquipmentMarketplace from './pages/UsedEquipmentMarketplace';
 import UsedEquipmentDetail from './pages/UsedEquipmentDetail';
 import CreateListingPreview from './pages/CreateListingPreview';
+import Login from './pages/Login';
+import Register from './pages/Register';
+import ForgotPassword from './pages/ForgotPassword';
 import ComponentShowcase from './pages/ComponentShowcase';
+import { AuthProvider } from './context/AuthContext';
 import './styles/global.css';
 
 /**
- * Root Application Router Configuration for AgriMart (Phase 8).
+ * Root Application Router Configuration for AgriMart (Phase 9).
  */
 export function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/rent" element={<RentListings />} />
-        <Route path="/rent/:id" element={<RentDetail />} />
-        <Route path="/buy-sell" element={<BuySellMarketplace />} />
-        <Route path="/product/:id" element={<ProductDetail />} />
-        <Route path="/crops" element={<CropsMarketplace />} />
-        <Route path="/crops/:id" element={<CropDetail />} />
-        <Route path="/products" element={<AgriProductsMarketplace />} />
-        <Route path="/products/:id" element={<AgriProductDetail />} />
-        <Route path="/used-equipment" element={<UsedEquipmentMarketplace />} />
-        <Route path="/used-equipment/:id" element={<UsedEquipmentDetail />} />
-        <Route path="/create-listing" element={<CreateListingPreview />} />
-        <Route path="/login" element={<Home />} />
-        <Route path="/showcase" element={<ComponentShowcase />} />
-        <Route path="*" element={<AgriProductsMarketplace />} />
-      </Routes>
-    </BrowserRouter>
+    <AuthProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/rent" element={<RentListings />} />
+          <Route path="/rent/:id" element={<RentDetail />} />
+          <Route path="/buy-sell" element={<BuySellMarketplace />} />
+          <Route path="/product/:id" element={<ProductDetail />} />
+          <Route path="/crops" element={<CropsMarketplace />} />
+          <Route path="/crops/:id" element={<CropDetail />} />
+          <Route path="/products" element={<AgriProductsMarketplace />} />
+          <Route path="/products/:id" element={<AgriProductDetail />} />
+          <Route path="/used-equipment" element={<UsedEquipmentMarketplace />} />
+          <Route path="/used-equipment/:id" element={<UsedEquipmentDetail />} />
+          <Route path="/create-listing" element={<CreateListingPreview />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route path="/showcase" element={<ComponentShowcase />} />
+          <Route path="*" element={<Home />} />
+        </Routes>
+      </BrowserRouter>
+    </AuthProvider>
   );
 }
 
