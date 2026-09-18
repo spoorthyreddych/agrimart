@@ -9,12 +9,14 @@ import CropsMarketplace from './pages/CropsMarketplace';
 import CropDetail from './pages/CropDetail';
 import AgriProductsMarketplace from './pages/AgriProductsMarketplace';
 import AgriProductDetail from './pages/AgriProductDetail';
+import UsedEquipmentMarketplace from './pages/UsedEquipmentMarketplace';
+import UsedEquipmentDetail from './pages/UsedEquipmentDetail';
 import CreateListingPreview from './pages/CreateListingPreview';
 import ComponentShowcase from './pages/ComponentShowcase';
 import './styles/global.css';
 
 /**
- * Root Application Router Configuration for AgriMart (Phase 7).
+ * Root Application Router Configuration for AgriMart (Phase 8).
  */
 export function App() {
   return (
@@ -29,6 +31,8 @@ export function App() {
         <Route path="/crops/:id" element={<CropDetail />} />
         <Route path="/products" element={<AgriProductsMarketplace />} />
         <Route path="/products/:id" element={<AgriProductDetail />} />
+        <Route path="/used-equipment" element={<UsedEquipmentMarketplace />} />
+        <Route path="/used-equipment/:id" element={<UsedEquipmentDetail />} />
         <Route path="/create-listing" element={<CreateListingPreview />} />
         <Route path="/login" element={<Home />} />
         <Route path="/showcase" element={<ComponentShowcase />} />
