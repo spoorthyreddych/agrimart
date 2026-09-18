@@ -1,0 +1,163 @@
+/* Messages Placeholder Styles */
+
+.agri-messages-page {
+  min-height: calc(100vh - 140px);
+  background-color: var(--color-bg-subtle, #f1f5f9);
+  padding: var(--spacing-6, 24px) 0 var(--spacing-12, 48px);
+}
+
+.agri-messages-container {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.agri-messages-back {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-2, 8px);
+  font-size: var(--font-size-sm, 0.9375rem);
+  font-weight: var(--font-weight-medium, 500);
+  color: var(--color-text-muted, #64748b);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: var(--spacing-4, 16px);
+}
+
+.agri-messages-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--spacing-4, 16px);
+  margin-bottom: var(--spacing-6, 24px);
+  flex-wrap: wrap;
+}
+
+.agri-messages-title {
+  font-size: var(--font-size-2xl, 1.875rem);
+  font-weight: var(--font-weight-bold, 700);
+  color: var(--color-text-main, #0f172a);
+  margin-top: 4px;
+}
+
+.agri-messages-subtitle {
+  font-size: var(--font-size-sm, 0.9375rem);
+  color: var(--color-text-muted, #64748b);
+}
+
+.agri-messages-notice {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-3, 12px);
+  padding: var(--spacing-4, 16px);
+  background-color: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: var(--border-radius-lg, 10px);
+  color: #1e40af;
+  font-size: var(--font-size-sm, 0.9375rem);
+  margin-bottom: var(--spacing-6, 24px);
+}
+
+.agri-messages-notice .notice-icon {
+  color: #3b82f6;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.agri-messages-card {
+  background-color: var(--color-bg-surface, #ffffff);
+  border-radius: var(--border-radius-xl, 16px);
+  padding: var(--spacing-6, 24px);
+  border: 1px solid var(--color-border-light, #e2e8f0);
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.04);
+}
+
+.agri-messages-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: var(--spacing-4, 16px);
+  border-bottom: 1px solid var(--color-border-light, #e2e8f0);
+  margin-bottom: var(--spacing-4, 16px);
+}
+
+.agri-messages-card-header h2 {
+  font-size: var(--font-size-lg, 1.25rem);
+  font-weight: var(--font-weight-bold, 700);
+  color: var(--color-text-main, #0f172a);
+}
+
+.agri-messages-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3, 12px);
+}
+
+.agri-message-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-3, 12px);
+  padding: var(--spacing-4, 16px);
+  border-radius: var(--border-radius-lg, 10px);
+  border: 1px solid var(--color-border-light, #e2e8f0);
+  background-color: var(--color-bg-surface, #ffffff);
+  position: relative;
+}
+
+.agri-message-item.unread {
+  background-color: #f0fdf4;
+  border-color: #bbf7d0;
+}
+
+.msg-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: var(--color-primary-light, #e8f5e9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.msg-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.msg-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.msg-sender {
+  font-size: var(--font-size-sm, 0.9375rem);
+  font-weight: var(--font-weight-bold, 700);
+  color: var(--color-text-main, #0f172a);
+}
+
+.msg-time {
+  font-size: 11px;
+  color: var(--color-text-muted, #64748b);
+}
+
+.msg-text {
+  font-size: var(--font-size-sm, 0.9375rem);
+  color: var(--color-text-secondary, #334155);
+  line-height: 1.4;
+}
+
+.unread-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--color-primary, #1b4332);
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}

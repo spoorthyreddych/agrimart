@@ -108,9 +108,9 @@ export const Navbar = ({ isLoggedIn: propIsLoggedIn, user: propUser }) => {
                 variant="outline"
                 size="sm"
                 icon={<User size={16} />}
-                onClick={() => navigate('/create-listing')}
+                onClick={() => navigate('/dashboard')}
               >
-                {effectiveUser?.name || 'Farmer Account'}
+                {effectiveUser?.name || 'Dashboard'}
               </Button>
               {logoutDemo && (
                 <Button

@@ -1,0 +1,79 @@
+/* Summary Card Styles */
+
+.agri-summary-card {
+  background-color: var(--color-bg-surface, #ffffff);
+  border-radius: var(--border-radius-xl, 16px);
+  border: 1px solid var(--color-border-light, #e2e8f0);
+  padding: var(--spacing-5, 20px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.04);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.agri-summary-card.clickable {
+  cursor: pointer;
+}
+
+.agri-summary-card.clickable:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(15, 23, 42, 0.08);
+}
+
+.agri-summary-card__body {
+  display: flex;
+  flex-direction: column;
+}
+
+.agri-summary-card__title {
+  font-size: var(--font-size-xs, 0.8125rem);
+  font-weight: var(--font-weight-semibold, 600);
+  color: var(--color-text-muted, #64748b);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: 4px;
+}
+
+.agri-summary-card__value {
+  font-size: var(--font-size-2xl, 1.875rem);
+  font-weight: var(--font-weight-bold, 700);
+  color: var(--color-text-main, #0f172a);
+  line-height: 1.1;
+}
+
+.agri-summary-card__subtitle {
+  font-size: var(--font-size-xs, 0.8125rem);
+  color: var(--color-text-secondary, #334155);
+  margin-top: 4px;
+}
+
+.agri-summary-card__icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--border-radius-md, 8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.agri-summary-card--default .agri-summary-card__icon {
+  background-color: var(--color-primary-light, #e8f5e9);
+  color: var(--color-primary, #1b4332);
+}
+
+.agri-summary-card--rentals .agri-summary-card__icon {
+  background-color: #e0f2fe;
+  color: #0284c7;
+}
+
+.agri-summary-card--requests .agri-summary-card__icon {
+  background-color: #fef3c7;
+  color: #b45309;
+}
+
+.agri-summary-card--messages .agri-summary-card__icon {
+  background-color: #fce7f3;
+  color: #be185d;
+}

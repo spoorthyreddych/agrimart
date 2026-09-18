@@ -15,12 +15,14 @@ import CreateListingPreview from './pages/CreateListingPreview';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import ForgotPassword from './pages/ForgotPassword';
+import Dashboard from './pages/Dashboard';
+import MessagesPlaceholder from './pages/MessagesPlaceholder';
 import ComponentShowcase from './pages/ComponentShowcase';
 import { AuthProvider } from './context/AuthContext';
 import './styles/global.css';
 
 /**
- * Root Application Router Configuration for AgriMart (Phase 9).
+ * Root Application Router Configuration for AgriMart (Phase 11).
  */
 export function App() {
   return (
@@ -39,6 +41,8 @@ export function App() {
           <Route path="/used-equipment" element={<UsedEquipmentMarketplace />} />
           <Route path="/used-equipment/:id" element={<UsedEquipmentDetail />} />
           <Route path="/create-listing" element={<CreateListingPreview />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/messages" element={<MessagesPlaceholder />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
